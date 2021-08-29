@@ -1383,18 +1383,18 @@ end)
 		UIS.InputEnded:connect(function(input, processed)
 		if input.UserInputType == Enum.UserInputType.MouseButton1 then
 		held = false
-		mousepressed = false
+		_G.mousepressed = false
 		end
 		end)
 		UIS.InputBegan:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseButton1Click then
-		mousepressed = true
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		_G.mousepressed = false
 		end
 		end)
 		Sliderr.MouseEnter:connect(function()
 		repeat
 		wait()
-		if mousepressed then
+		if _G.mousepressed then
 		held = true
 		end
 		until SliderBtn.MouseLeave
@@ -1402,7 +1402,7 @@ end)
 		SliderBtn.MouseEnter:connect(function()
 		repeat
 		wait()
-		if mousepressed then
+		if _G.mousepressed then
 		held = true
 		end
 		until Sliderr.MouseLeave
@@ -1448,4 +1448,3 @@ for i,v in pairs(Handler:GetChildren()) do
 end
 Handler.Size = UDim2.new(0, 200, 0, si)
 return Library;
-
