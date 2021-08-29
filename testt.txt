@@ -1381,13 +1381,13 @@ end)
 		end
 		end
 		UIS.InputEnded:connect(function(input, processed)
-		if input.UserInputType == Enum.UserInputType.MouseButton1Down then
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
 		held = false
 		mousepressed = false
 		end
 		end)
 		UIS.InputBegan:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		if input.UserInputType == Enum.UserInputType.MouseButton1Click then
 		mousepressed = true
 		end
 		end)
